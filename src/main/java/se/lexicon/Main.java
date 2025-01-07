@@ -80,14 +80,14 @@ public class Main {
         var scanner = new Scanner(System.in);
         int guessInput = 0;
 
-        while(guessInput != randomNum){
+        do{
             numberOfAttempts++;
             guessInput = scanner.nextInt();
             if(guessInput < randomNum)
                 System.out.println("Your guess was too small. ");
             else if (guessInput > randomNum)
                 System.out.println("Your guess was too big. ");
-        }
+        }while(guessInput != randomNum);
         System.out.println("Congratulations, you guessed the correct number " + randomNum + " in " + numberOfAttempts + " attempt(s)!");
 
     }
