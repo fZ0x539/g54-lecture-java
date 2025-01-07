@@ -9,6 +9,9 @@ public class Main {
         /*checkLeapYear();*/
         /*calculateNumbers();*/
         /*printAverageOfNums();*/
+        /*printName();*/
+        /*calculateInput();*/
+        convertTimeUnit();
     }
 
     public static void checkLeapYear(){
@@ -32,5 +35,35 @@ public class Main {
         System.out.println("(23 + 11 + 77) / 3 = " + ((23+11+77)/3));
     }
 
+    public static void printName(){
+        var scanner = new Scanner(System.in);
+        System.out.print("Please enter your Name: ");
+        String name = scanner.nextLine();
+        System.out.println("Hello " + name);
+    }
+
+    public static void calculateInput(){
+        var scanner = new Scanner(System.in);
+        System.out.println("Please enter two numbers\nNum 1: ");
+        double numOne = scanner.nextDouble();
+        System.out.println("Num 2: ");
+        double numTwo = scanner.nextDouble();
+        System.out.println("Summary = " + (numOne + numTwo) );
+        System.out.println("Difference = " + (numOne - numTwo));
+        System.out.println("Product = " + (numOne * numTwo));
+        System.out.println("Quotient = " + (numOne/numTwo ));
+    }
+
+    public static void convertTimeUnit(){
+        var scanner = new Scanner(System.in);
+        System.out.println("Input seconds: ");
+        int totalSeconds = scanner.nextInt();
+
+        int hours = totalSeconds / 3600;
+        int minutes = (totalSeconds % 3600)  / 60;
+        int seconds = (totalSeconds % 3600) % 60;
+
+        System.out.printf("%02d:%02d:%02d\n", hours, minutes, seconds);
+    }
 
 }
