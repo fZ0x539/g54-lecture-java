@@ -5,13 +5,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        // printAli();
+        // checkLeapYear();
+        // calculateNumbers();
+        // printAverageOf();
+        // printName();
+        // calculateInput();
+        // convertTimeUnit();
+        guessNumber();
+    }
+
+    public static void printAli(){
         System.out.println("Hello\nAli!");
-        /*checkLeapYear();*/
-        /*calculateNumbers();*/
-        /*printAverageOfNums();*/
-        /*printName();*/
-        /*calculateInput();*/
-        convertTimeUnit();
     }
 
     public static void checkLeapYear(){
@@ -31,7 +36,7 @@ public class Main {
         System.out.println("55 - 12 = " + (55-12));
     }
 
-    public static void printAverageOfNums(){
+    public static void printAverageOf(){
         System.out.println("(23 + 11 + 77) / 3 = " + ((23+11+77)/3));
     }
 
@@ -64,6 +69,27 @@ public class Main {
         int seconds = (totalSeconds % 3600) % 60;
 
         System.out.printf("%02d:%02d:%02d\n", hours, minutes, seconds);
+    }
+
+    public static void guessNumber(){
+        //Generate between 1-500 while making it an int for the sake of simplicity
+        int randomNum = (int) (Math.random() * 500) + 1;
+        System.out.println("Enter a number between 1-500: ");
+
+        int numberOfAttempts = 0;
+        var scanner = new Scanner(System.in);
+        int guessInput = 0;
+
+        while(guessInput != randomNum){
+            numberOfAttempts++;
+            guessInput = scanner.nextInt();
+            if(guessInput < randomNum)
+                System.out.println("Your guess was too small. ");
+            else if (guessInput > randomNum)
+                System.out.println("Your guess was too big. ");
+        }
+        System.out.println("Congratulations, you guessed the correct number " + randomNum + " in " + numberOfAttempts + " attempt(s)!");
+
     }
 
 }
